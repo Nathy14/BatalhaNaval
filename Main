@@ -1,0 +1,35 @@
+import random
+tabuleiro = []
+for repeti'' in range(0,10):
+    tabuleiro.append(["O"] * 10)
+# função para criar o tabuleiro do jogo.
+def construir_tabuleiro(tabuleiro):
+    for espaços in tabuleiro:
+        print((" ").join(espaços))
+construir_tabuleiro(tabuleiro)
+#função para randomizar a linha onde estará a embarcação
+def linha(tabuleiro):
+    linha_aleatoria =  random.randint(0,len(tabuleiro)-1)
+    return linha_aleatoria
+#função para randomizar a coluna onde estará a embarcação
+def coluna(tabuleiro):
+    coluna_aleatoria = random.randint(0,len(tabuleiro[0])-1)
+    return coluna_aleatoria
+#coordenadas da embarcação
+linha_barco = linha(tabuleiro)
+coluna_barco = coluna(tabuleiro)
+#validar linha
+def validar_linha():
+    while usuario_linha<0 or usuario_linha>10:
+        usuario_linha = int(input("Opa, digite a linha, sendo um número de 0 à 10: "))
+#validar coluna
+def validar_coluna():
+    usuario_coluna = int(input("Opa, digite a coluna, sendo um número de 0 à 10: "))
+usuario_linha = int(input("Digite a linha: "))
+def conta():
+
+validar_linha()
+usuario_coluna = int(input("Digite a coluna: "))
+validar_coluna()
+if (usuario_linha == linha_barco) and (usuario_coluna == coluna_barco):
+    print("Parabéns você conseguiu afundar a embarcação")
