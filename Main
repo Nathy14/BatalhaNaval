@@ -6,7 +6,6 @@ for repeticao in range(0,10):
 def construir_tabuleiro(tabuleiro):
     for espaços in tabuleiro:
         print((" ").join(espaços))
-construir_tabuleiro(tabuleiro)
 #função para randomizar a linha onde estará a embarcação
 def linha(tabuleiro):
     linha_aleatoria =  random.randint(0,len(tabuleiro)-1)
@@ -24,10 +23,11 @@ def validar_linha():
         usuario_linha = int(input("Opa, digite a linha, sendo um número de 0 à 10: "))
 #validar coluna
 def validar_coluna():
-    usuario_coluna = int(input("Opa, digite a coluna, sendo um número de 0 à 10: "))
-usuario_linha = int(input("Digite a linha: "))
-def conta():
+    while usuario_coluna<0 or usuario_coluna>10:
+        usuario_coluna = int(input("Opa, digite a coluna, sendo um número de 0 à 10: "))
 
+construir_tabuleiro(tabuleiro)
+usuario_linha = int(input("Digite a linha: "))
 validar_linha()
 usuario_coluna = int(input("Digite a coluna: "))
 validar_coluna()
