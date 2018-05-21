@@ -1,6 +1,6 @@
 import random
 tabuleiro = []
-for repeti'' in range(0,10):
+for repeticao in range(0,10):
     tabuleiro.append(["O"] * 10)
 # função para criar o tabuleiro do jogo.
 def construir_tabuleiro(tabuleiro):
