@@ -80,8 +80,6 @@ elif (usuario_linha == linha_barco2) and (usuario_coluna == coluna_barco2):
     #inserir o teste de perícia em matemática e verificar resultado.
     #inserir um fim com história.
     #calcular pontuação do usuario.
-elif tabuleiro[usuario_linha][usuario_coluna] == "X":
-    print("Opa, você já escolheu essas coordenadas")
 else:
     if tabuleiro[usuario_linha][usuario_coluna] == "X":
         print("Opa, você já escolheu essas coordenadas")
