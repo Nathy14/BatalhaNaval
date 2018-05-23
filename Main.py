@@ -48,50 +48,12 @@ coluna_barco2 = coluna2(tabuleiro)
 print("Linha {}        {}".format(linha_barco1,linha_barco2))
 print("Coluna  {}       {}".format(coluna_barco1,coluna_barco2))
 
-#validar linha
-def validar_linha(usuario_linha):
-    while usuario_linha<0 or usuario_linha>4:
-        usuario_linha = int(input("Opa, digite a linha, sendo um número de 0 à 4: "))
-    return usuario_linha
-#validar coluna
-def validar_coluna(usuario_coluna):
-    while usuario_coluna<0 or usuario_coluna>4:
-        usuario_coluna = int(input("Opa, digite a coluna, sendo um número de 0 à 4: "))
-    return usuario_coluna
 instrucao()
 sleep(4)
 construir_tabuleiro(tabuleiro)
-usuario_linha = int(input("Digite a linha: "))
-validar_linha(usuario_linha)
-usuario_coluna = int(input("Digite a coluna: "))
-validar_coluna(usuario_coluna)
-if (usuario_linha == linha_barco1) and (usuario_coluna == coluna_barco1):
-    if tabuleiro[usuario_linha][usuario_coluna] == "X":
-        print("Opa, você já escolheu essas coordenadas")
-    else:
-        print("Parabéns você conseguiu afundar uma  embarcação")
-        tabuleiro[usuario_linha][usuario_coluna] = "X"
-elif (usuario_linha == linha_barco2) and (usuario_coluna == coluna_barco2):
-    if tabuleiro[usuario_linha][usuario_coluna] == "X":
-        print("Opa, você já escolheu essas coordenadas")
-    else:
-        print("Parabéns você conseguiu afundar uma  embarcação")
-        tabuleiro[usuario_linha][usuario_coluna] = "X"
-    #inserir o teste de perícia em matemática e verificar resultado.
-    #inserir um fim com história.
-    #calcular pontuação do usuario.
-else:
-    if tabuleiro[usuario_linha][usuario_coluna] == "X":
-        print("Opa, você já escolheu essas coordenadas")
-    else:     
-        print("Opa, você não afundou nada.")
-        tabuleiro[usuario_linha][usuario_coluna] = "X"
-while tabuleiro[linha_barco1][coluna_barco1] != "X" or tabuleiro[linha_barco2][coluna_barco2] != "X":
-    construir_tabuleiro(tabuleiro)
+def jogo():
     usuario_linha = int(input("Digite a linha: "))
-    validar_linha(usuario_linha)
     usuario_coluna = int(input("Digite a coluna: "))
-    validar_coluna(usuario_coluna)
     if (usuario_linha == linha_barco1) and (usuario_coluna == coluna_barco1):
         if tabuleiro[usuario_linha][usuario_coluna] == "X":
             print("Opa, você já escolheu essas coordenadas")
@@ -104,15 +66,21 @@ while tabuleiro[linha_barco1][coluna_barco1] != "X" or tabuleiro[linha_barco2][c
         else:
             print("Parabéns você conseguiu afundar uma  embarcação")
             tabuleiro[usuario_linha][usuario_coluna] = "X"
-    
-    
+    elif (usuario_coluna<0 or usuario_coluna>4) or (usuario_linha<0 or usuario_linha>4):
+        print("""Opa, essas coordenadas não são válidas.
+              Lembre-se de que as coordenadas são números de 0 a 4""")
     #inserir o teste de perícia em matemática e verificar resultado.
     #inserir um fim com história.
     #calcular pontuação do usuario.
     else:
         if tabuleiro[usuario_linha][usuario_coluna] == "X":
             print("Opa, você já escolheu essas coordenadas")
-        else:
+        else:     
             print("Opa, você não afundou nada.")
             tabuleiro[usuario_linha][usuario_coluna] = "X"
+while tabuleiro[linha_barco1][coluna_barco1] != "X" or tabuleiro[linha_barco2][coluna_barco2] != "X":
+    construir_tabuleiro(tabuleiro)
+    jogo()
+
         
+
