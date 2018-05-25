@@ -22,11 +22,11 @@ def construir_tabuleiro_facil(tabuleiro_facil):
 #função com as instruções do jogo.
 def instrucao():
     print("Este jogo se chama Batalha Naval, em que o objetivo é descobrir as coordenadas de uma embarcação e a afundar,")
-    sleep(2)
+    sleep(4)
     print("neste jogo, as coordenadas são linhas e colunas que a identificação delas são feitas do número 0 até o 4.")
-    sleep(2)
+    sleep(4)
     print("Ou seja, são dois pontos que indicam uma determinada localização no tabuleiro.")
-    sleep(2)
+    sleep(4)
     print("Para tentar afundar um navio, é necessário além de informar as coordenas, acertar uma conta matemática.")
 
         
@@ -97,13 +97,14 @@ coluna_barco2 = coluna2(tabuleiro_facil)
 print("Linha {}        {}".format(linha_barco1,linha_barco2))
 print("Coluna  {}       {}".format(coluna_barco1,coluna_barco2))
 
-
+#base do jogo dificuldade FÁCIL
 def jogo_facil():
     construir_tabuleiro_facil(tabuleiro_facil)
     contador_erro=0
     contador_acerto=0
     usuario_linha = int(input("Digite a linha: "))
     usuario_coluna = int(input("Digite a coluna: "))
+    #verifica se o usuário acertou as coordenadas da embarcação 1.
     if (usuario_linha == linha_barco1) and (usuario_coluna == coluna_barco1):
         if tabuleiro_facil[usuario_linha][usuario_coluna] == "X":
             print("Opa, você já escolheu essas coordenadas")
@@ -114,8 +115,23 @@ def jogo_facil():
                 tentativa_jogador = int(input("Parece que você errou o calculo, vamos tentar novamente? Qual é o resultado da conta?"))
                 contador_erro = contador_erro+1
             contador_acerto = contador_acerto+1
-            print("Parabéns você conseguiu afundar uma  embarcação")
-            tabuleiro_facil[usuario_linha][usuario_coluna] = "X"
+	    print("""
+      _.-^^---....,,--
+ _--                  --_
+<                        >)
+|                         |
+ \._                   _./
+    ```--. . , ; .--'''
+          | |   |
+       .-=||  | |=-.
+       `-=#$%&%$#=-'
+          | ;  :|
+ _____.,-#%&$@%#&#~,._____ """)
+            print("KAAAABUUUM!!!")
+            sleep(2)
+            print("\nParabéns você conseguiu afundar uma  embarcação")
+           tabuleiro_facil[usuario_linha][usuario_coluna] = "X"
+	#verifica se o usuário acrtou as coordenadas da embarcação 2.
     elif (usuario_linha == linha_barco2) and (usuario_coluna == coluna_barco2):
         if tabuleiro_facil[usuario_linha][usuario_coluna] == "X":
             print("Opa, você já escolheu essas coordenadas")
@@ -126,11 +142,27 @@ def jogo_facil():
                 tentativa_jogador = int(input("Parece que você errou o calculo, vamos tentar novamente? Qual é o resultado da conta?"))
                 contador_erro+=1
             contador_acerto = contador_acerto+1
+	    print("""
+     _.-^^---....,,--
+ _--                  --_
+<                        >)
+|                         |
+ \._                   _./
+    ```--. . , ; .--'''
+          | |   |
+       .-=||  | |=-.
+       `-=#$%&%$#=-'
+          | ;  :|
+ _____.,-#%&$@%#&#~,._____ """)
+            print("KAAAABUUUM!!!")
+            sleep(2)
             print("\nParabéns você conseguiu afundar uma  embarcação")
             tabuleiro_facil[usuario_linha][usuario_coluna] = "X"
+	# verifica se o usuário entrou com valores de coordenadas inválidas.
     elif (usuario_coluna<0 or usuario_coluna>4) or (usuario_linha<0 or usuario_linha>4):
         print("""Opa, essas coordenadas não são válidas.
               Lembre-se de que as coordenadas são números de 0 a 4""")
+	#verifica se o usuário errou as coordenadas.
     else:
         if tabuleiro_facil[usuario_linha][usuario_coluna] == "X":
             print("Opa, você já escolheu essas coordenadas")
@@ -143,6 +175,7 @@ def jogo_facil():
             contador_acerto = contador_acerto+1
             print("\n Opa, você não afundou nada.")
             tabuleiro_facil[usuario_linha][usuario_coluna] = "X"
+	#laço de repetição ativada até que o usuário acerte as coordenadas das duas embarcações.
     while tabuleiro_facil[linha_barco1][coluna_barco1] != "X" or tabuleiro_facil[linha_barco2][coluna_barco2] != "X":
         construir_tabuleiro_facil(tabuleiro_facil)
         contador_erro=0
@@ -159,6 +192,20 @@ def jogo_facil():
                     tentativa_jogador = int(input("Parece que você errou o calculo, vamos tentar novamente? Qual é o resultado da conta?"))
                     contador_erro = contador_erro+1
                 contador_acerto = contador_acerto+1
+	        print("""
+     _.-^^---....,,--
+ _--                  --_
+<                        >)
+|                         |
+ \._                   _./
+    ```--. . , ; .--'''
+          | |   |
+       .-=||  | |=-.
+       `-=#$%&%$#=-'
+          | ;  :|
+ _____.,-#%&$@%#&#~,._____ """)
+            print("KAAAABUUUM!!!")
+            sleep(2)
                 print("Parabéns você conseguiu afundar uma  embarcação")
                 tabuleiro_facil[usuario_linha][usuario_coluna] = "X"
         elif (usuario_linha == linha_barco2) and (usuario_coluna == coluna_barco2):
@@ -171,6 +218,20 @@ def jogo_facil():
                     tentativa_jogador = int(input("Parece que você errou o calculo, vamos tentar novamente? Qual é o resultado da conta?"))
                     contador_erro+=1
                 contador_acerto = contador_acerto+1
+		print("""
+     _.-^^---....,,--
+ _--                  --_
+<                        >)
+|                         |
+ \._                   _./
+    ```--. . , ; .--'''
+          | |   |
+       .-=||  | |=-.
+       `-=#$%&%$#=-'
+          | ;  :|
+ _____.,-#%&$@%#&#~,._____ """)
+            print("KAAAABUUUM!!!")
+            sleep(2)
                 print("\nParabéns você conseguiu afundar uma  embarcação")
                 tabuleiro_facil[usuario_linha][usuario_coluna] = "X"
         elif (usuario_coluna<0 or usuario_coluna>4) or (usuario_linha<0 or usuario_linha>4):
@@ -189,7 +250,7 @@ Lembre-se de que as coordenadas são números de 0 a 4""")
                 print("\n Opa, você não afundou nada.")
                 tabuleiro_facil[usuario_linha][usuario_coluna] = "X"
     pontuação(contador_erro,contador_acerto)
-    
+#começo do jogo.   
 instrucao()
 sleep(4)
 print("""Selecione a dificuldade:
