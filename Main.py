@@ -1,4 +1,5 @@
 
+
 import random
 from time import sleep
 tabuleiro = []
@@ -20,6 +21,8 @@ def instrucao():
     print("~Para tentar afundar um navio, é necessário além de informar as coordenas, acertar uma conta matemática~")
     sleep(4)    
     print("{:=^40}".format("TUTORIAL"))
+
+    
     sleep(4)
     print(""">Modo FÁCIL: 2 embarcações
 >Modo DIFÍCIL: 4 embarcações""")
@@ -71,25 +74,26 @@ def linha2(tabuleiro):
 #função para randomizar a linha onde estará a embarcação 3
 def linha3(tabuleiro):
 	linha_aleatoria3 = random.randint(0,len(tabuleiro)-1)
-	while linha_aleatoria3 == linha2(tabuleiro):
+	while linha_aleatoria3 == linha2(tabuleiro) and linha_aleatoria3 == coluna2(tabuleiro):
 		linha_aleatoria3 = random.randint(0,len(tabuleiro)-1)
 	return linha_aleatoria3
 #função para randomizar a coluna onde estará a embarcação 3
 def coluna3(tabuleiro):
 	coluna_aleatoria3 = random.randint(0,len(tabuleiro[0])-1)
-	while coluna_aleatoria3 == coluna2(tabuleiro):
+	while coluna_aleatoria3 == coluna2(tabuleiro) and coluna_aleatoria3 == linha2(tabuleiro):
 		coluna_aleatoria3 = random.randint(0,len(tabuleiro[0])-1)
 	return coluna_aleatoria3
 #função para randomizar a linha onde estará a embarcação 4
 def linha4(tabuleiro):
 	linha_aleatoria4 = random.randint(0,len(tabuleiro)-1)
-	while linha_aleatoria4 == linha3(tabuleiro):
+	while linha_aleatoria4 == linha3(tabuleiro) and linha_aleatoria4 == coluna
+	3(tabuleiro):
 		linha_aleatoria4 = random.randint(0,len(tabuleiro)-1)
 	return linha_aleatoria4
 #função para randomizar a coluna onde estará a embarcação 4
 def coluna4(tabuleiro):
 	coluna_aleatoria4 =  random.randint(0,len(tabuleiro[0])-1)
-	while coluna_aleatoria4 == coluna3(tabuleiro):
+	while coluna_aleatoria4 == coluna3(tabuleiro) and coluna_aleatoria4 == linha3(tabuleiro) :
 		coluna_aleatoria4 =  random.randint(0,len(tabuleiro[0])-1)
 	return coluna_aleatoria4
 	
@@ -577,3 +581,5 @@ else:
 print("Saindo...")
 
     
+
+
