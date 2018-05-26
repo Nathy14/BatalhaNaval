@@ -27,6 +27,8 @@ def instrucao():
     print(""">Modo FÁCIL: 2 embarcações
 >Modo DIFÍCIL: 4 embarcações""")
     sleep(2)
+    print("-->Quando ficar marcado um X em seu tabuleiro, significa que você já escolheu aquelas coordenadas<---")
+    sleep(2)
     print("Como saber o número das linhas e colunas?")
     sleep(2)
     print("""~[~]~ ~ ~
