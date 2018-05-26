@@ -135,6 +135,15 @@ def pontuação(contador_erro,contador_acerto):
     elif contador_acerto > contador_erro:
         print("\nVocê acertou várias contas, parabéns, mas ainda tem como melhorar? Prátique mais alguns cálculos básicos e tente jogar novamente! \n")
 
+#coordenadas da embarcação 
+linha_barco1 = linha1(tabuleiro)
+coluna_barco1 = coluna1(tabuleiro)
+linha_barco2 = linha2(tabuleiro)
+coluna_barco2 = coluna2(tabuleiro)
+coluna_barco3 = coluna3(tabuleiro)
+linha_barco3 = linha3(tabuleiro)
+coluna_barco4 = coluna4(tabuleiro)
+linha_barco4 = linha4(tabuleiro)
 
 #base do jogo dificuldade FÁCIL
 def jogo_facil():
