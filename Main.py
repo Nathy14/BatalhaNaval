@@ -105,15 +105,15 @@ def mat_titulo():
     num = random.randint(0,10)
     num2 = random.randint(0,10)
     if tipo_de_conta==0:
-        print("Seu calculo para atingir o local escolhido é ",num,"+ ",num2,".")
+        print("Seu cálculo para atingir o local escolhido é ",num,"+ ",num2,".")
         resultado = num+num2
     elif tipo_de_conta==1:
         while num < num2:
             num2 = random.randint(0,10)
-        print("Seu calculo para atingir o local escolhido é ",num,"- ",num2,".")
+        print("Seu cálculo para atingir o local escolhido é ",num,"- ",num2,".")
         resultado = num-num2
     elif tipo_de_conta==2:
-        print("Seu calculo para atingir o local escolhido é ",num,"* ",num2,".")
+        print("Seu cálculo para atingir o local escolhido é ",num,"* ",num2,".")
         resultado = num*num2
     else:
         while num2 == 0:
@@ -122,7 +122,7 @@ def mat_titulo():
             num = random.randint(0,10)
         while num%num2 != 0:
             num = random.randint(0,10)
-        print("Seu calculo para atingir o local escolhido é ",num,"/ ",num2,".")
+        print("Seu cálculo para atingir o local escolhido é ",num,"/ ",num2,".")
         resultado = num/num2
     return resultado
 
@@ -135,17 +135,6 @@ def pontuação(contador_erro,contador_acerto):
     elif contador_acerto > contador_erro:
         print("\nVocê acertou várias contas, parabéns, mas ainda tem como melhorar? Prátique mais alguns cálculos básicos e tente jogar novamente! \n")
 
-#coordenadas da embarcação 
-linha_barco1 = linha1(tabuleiro)
-coluna_barco1 = coluna1(tabuleiro)
-linha_barco2 = linha2(tabuleiro)
-coluna_barco2 = coluna2(tabuleiro)
-coluna_barco3 = coluna3(tabuleiro)
-linha_barco3 = linha3(tabuleiro)
-coluna_barco4 = coluna4(tabuleiro)
-linha_barco4 = linha4(tabuleiro)
-print("Linha {}   {}   {}      {}".format(linha_barco1,linha_barco2,linha_barco3,linha_barco4))
-print("Coluna {}   {}   {}      {}".format(coluna_barco1,coluna_barco2,coluna_barco3,coluna_barco4))
 
 #base do jogo dificuldade FÁCIL
 def jogo_facil():
