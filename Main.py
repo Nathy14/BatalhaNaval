@@ -1,5 +1,3 @@
-
-
 import random
 from time import sleep
 tabuleiro = []
@@ -20,7 +18,7 @@ def instrucao():
     sleep(4)   
     print("~Para tentar afundar um navio, é necessário além de informar as coordenas, acertar uma conta matemática~")
     sleep(4)    
-    print("{:=^40}".format("TUTORIAL"))
+    print("{:=^120}".format("TUTORIAL"))
 
     
     sleep(4)
@@ -31,11 +29,13 @@ def instrucao():
     sleep(2)
     print("Como saber o número das linhas e colunas?")
     sleep(2)
-    print("""~[~]~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
+    print("""
+  0 1 2 3 4
+0 ~[~]~ ~ ~
+1 ~ ~ ~ ~ ~
+2 ~ ~ ~ ~ ~
+3 ~ ~ ~ ~ ~
+4 ~ ~ ~ ~ ~
 > A coordenada do local selecionado é linha 0 e coluna 1""")
     sleep(4)
     print("""~ ~ ~ ~ ~
@@ -64,13 +64,13 @@ def coluna1(tabuleiro):
 #função para randomizar a coluna onde estará a embarcação 2
 def coluna2(tabuleiro):
     coluna_aleatoria2 = random.randint(0,len(tabuleiro[0])-1)
-    while coluna_aleatoria2 == coluna1(tabuleiro):
+    while coluna_aleatoria2 == coluna1(tabuleiro) and coluna_aleatoria2 == linha1(tabuleiro):
         coluna_aleatoria2 = random.randint(0,len(tabuleiro[0])-1)
     return coluna_aleatoria2
 #função para randomizar a linha onde estara a embarcação 2
 def linha2(tabuleiro):
     linha_aleatoria2 = random.randint(0,len(tabuleiro)-1)
-    while linha_aleatoria2 == linha1(tabuleiro):
+    while linha_aleatoria2 == linha1(tabuleiro)and linha_aleatoria2 == coluna1(tabuleiro):
         linha_aleatoria2 = random.randint(0,len(tabuleiro)-1)
     return linha_aleatoria2
 #função para randomizar a linha onde estará a embarcação 3
@@ -88,8 +88,7 @@ def coluna3(tabuleiro):
 #função para randomizar a linha onde estará a embarcação 4
 def linha4(tabuleiro):
 	linha_aleatoria4 = random.randint(0,len(tabuleiro)-1)
-	while linha_aleatoria4 == linha3(tabuleiro) and linha_aleatoria4 == coluna
-	3(tabuleiro):
+	while linha_aleatoria4 == linha3(tabuleiro) and linha_aleatoria4 == coluna3(tabuleiro):
 		linha_aleatoria4 = random.randint(0,len(tabuleiro)-1)
 	return linha_aleatoria4
 #função para randomizar a coluna onde estará a embarcação 4
@@ -105,15 +104,15 @@ def mat_titulo():
     num = random.randint(0,10)
     num2 = random.randint(0,10)
     if tipo_de_conta==0:
-        print("Seu cálculo para atingir o local escolhido é ",num,"+ ",num2,".")
+        print("Seu calculo para atingir o local escolhido é ",num,"+ ",num2,".")
         resultado = num+num2
     elif tipo_de_conta==1:
         while num < num2:
             num2 = random.randint(0,10)
-        print("Seu cálculo para atingir o local escolhido é ",num,"- ",num2,".")
+        print("Seu calculo para atingir o local escolhido é ",num,"- ",num2,".")
         resultado = num-num2
     elif tipo_de_conta==2:
-        print("Seu cálculo para atingir o local escolhido é ",num,"* ",num2,".")
+        print("Seu calculo para atingir o local escolhido é ",num,"* ",num2,".")
         resultado = num*num2
     else:
         while num2 == 0:
@@ -122,7 +121,7 @@ def mat_titulo():
             num = random.randint(0,10)
         while num%num2 != 0:
             num = random.randint(0,10)
-        print("Seu cálculo para atingir o local escolhido é ",num,"/ ",num2,".")
+        print("Seu calculo para atingir o local escolhido é ",num,"/ ",num2,".")
         resultado = num/num2
     return resultado
 
@@ -144,6 +143,7 @@ coluna_barco3 = coluna3(tabuleiro)
 linha_barco3 = linha3(tabuleiro)
 coluna_barco4 = coluna4(tabuleiro)
 linha_barco4 = linha4(tabuleiro)
+
 
 #base do jogo dificuldade FÁCIL
 def jogo_facil():
@@ -297,6 +297,14 @@ Lembre-se de que as coordenadas são números de 0 a 4""")
                 tabuleiro[usuario_linha][usuario_coluna] = "X"
     #mostra a pontuação do usuário.
     pontuação(contador_erro,contador_acerto)
+    print("""                      )___(
+                           _______/__/_
+                  ___     /===========|   ___
+ ____       __   [\\\]___/____________|__[///]   __
+ \   \_____[\\]__/___________________________\__[//]___
+  \40A                                                 |
+   \                                                  /
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~""")
 #base do jogo dificuldade DIFÍCIL.
 def jogo_dificil():
     construir_tabuleiro(tabuleiro)
@@ -561,6 +569,14 @@ Lembre-se de que as coordenadas são números de 0 a 4""")
                 tabuleiro[usuario_linha][usuario_coluna] = "X"
         #mostra a pontuação do usuário.
     pontuação(contador_erro,contador_acerto)
+    print("""                      )___(
+                           _______/__/_
+                  ___     /===========|   ___
+ ____       __   [\\\]___/____________|__[///]   __
+ \   \_____[\\]__/___________________________\__[//]___
+  \40A                                                 |
+   \                                                  /
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~""")
 #começo do jogo.   
 instrucao()
 sleep(4)
@@ -579,7 +595,3 @@ if dificuldade == 1:
 else:
     jogo_dificil()
 print("Saindo...")
-
-    
-
-
