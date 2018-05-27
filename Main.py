@@ -13,20 +13,18 @@ def construir_tabuleiro(tabuleiro):
 #função com as instruções do jogo.
 def instrucao():
     print("~Este jogo se chama Batalha Naval, em que o objetivo é descobrir as coordenadas de uma embarcação e a afundar~")
-    sleep(4)
+    sleep(6)
     print("~Neste jogo, as coordenadas são identificadas por números de linhas e colunas~")
-    sleep(4)   
+    sleep(6)   
     print("~Para tentar afundar um navio, é necessário além de informar as coordenas, acertar uma conta matemática~")
-    sleep(4)    
-    print("{:=^120}".format("TUTORIAL"))
-
-    
-    sleep(4)
+    sleep(6)    
+    print("{:=^120}".format("TUTORIAL")) 
+    sleep(6)
     print(""">Modo FÁCIL: 2 embarcações
 >Modo DIFÍCIL: 4 embarcações""")
-    sleep(2)
+    sleep(4)
     print("-->Quando ficar marcado um X em seu tabuleiro, significa que você já escolheu aquelas coordenadas<---")
-    sleep(2)
+    sleep(4)
     print("Como saber o número das linhas e colunas?")
     sleep(2)
     print("""
@@ -37,7 +35,7 @@ def instrucao():
 3 ~ ~ ~ ~ ~
 4 ~ ~ ~ ~ ~
 > A coordenada do local selecionado é linha 0 e coluna 1""")
-    sleep(4)
+    sleep(6)
     print("""~ ~ ~ ~ ~
 ~[~]~ ~ ~
 ~ ~ ~ ~ ~
@@ -297,7 +295,7 @@ Lembre-se de que as coordenadas são números de 0 a 4""")
                 tabuleiro[usuario_linha][usuario_coluna] = "X"
     #mostra a pontuação do usuário.
     pontuação(contador_erro,contador_acerto)
-    print("""                      )___(
+    print("""                      
                            _______/__/_
                   ___     /===========|   ___
  ____       __   [\\\]___/____________|__[///]   __
@@ -569,7 +567,7 @@ Lembre-se de que as coordenadas são números de 0 a 4""")
                 tabuleiro[usuario_linha][usuario_coluna] = "X"
         #mostra a pontuação do usuário.
     pontuação(contador_erro,contador_acerto)
-    print("""                      )___(
+    print("""                     
                            _______/__/_
                   ___     /===========|   ___
  ____       __   [\\\]___/____________|__[///]   __
